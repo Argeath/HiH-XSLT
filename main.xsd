@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="lotnictwo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cywilne">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="samoloty">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="samolot">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="miejsc" type="xs:unsignedShort" />
+                          <xs:element name="predkosc_przelotowa" type="xs:unsignedShort" />
+                          <xs:element name="zasieg" type="xs:unsignedShort" />
+                          <xs:element name="spalanie" type="xs:decimal" />
+                          <xs:element name="silniki">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="silnik">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ciag" type="xs:decimal" />
+                                      <xs:element name="waga" type="xs:unsignedShort" />
+                                    </xs:sequence>
+                                    <xs:attribute name="ilosc" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="producent" type="xs:string" use="required" />
+                                    <xs:attribute name="model" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="info" type="xs:string" />
+                          <xs:element name="photo" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="producent" type="xs:string" use="required" />
+                        <xs:attribute name="model" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="wojskowe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typy_pojazdow">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="typ" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="autor" type="xs:string" use="required" />
+      <xs:attribute name="nr-indexu" type="xs:unsignedInt" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

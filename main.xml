@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="transform1.xslt"?>
+<lotnictwo autor="Dominik Kinal" nr-indexu="160589">
+  <cywilne>
+    <samoloty>
+      <samolot producent="Boeing" model="B737-500">
+        <miejsc>123</miejsc>
+        <predkosc_przelotowa>780</predkosc_przelotowa>
+        <zasieg>4449</zasieg>
+        <spalanie>4.983</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="CFM International" model="CFM56">
+            <ciag>86.7</ciag>
+            <waga>2366</waga>
+            <photo>http://www.cfmaeroengines.com/img/logo.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Boeing_737">Boeing 737</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/ENTERAIR6-SPENB.jpg/240px-ENTERAIR6-SPENB.jpg</photo>
+      </samolot>
+      <samolot producent="Boeing" model="B737-900">
+        <miejsc>165</miejsc>
+        <predkosc_przelotowa>828</predkosc_przelotowa>
+        <zasieg>3815</zasieg>
+        <spalanie>3.627</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="CFM International" model="CFM56">
+            <ciag>86.7</ciag>
+            <waga>2366</waga>
+            <photo>http://www.cfmaeroengines.com/img/logo.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Boeing_737">Boeing 737</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Lufthansa_Boeing_737-100_in_Zurich_1981.jpg/220px-Lufthansa_Boeing_737-100_in_Zurich_1981.jpg</photo>
+      </samolot>
+      <samolot producent="Boeing" model="B747-400">
+        <miejsc>524</miejsc>
+        <predkosc_przelotowa>893</predkosc_przelotowa>
+        <zasieg>17000</zasieg>
+        <spalanie>8.61</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="Pratt and Whitney" model="PW4062">
+            <ciag>282</ciag>
+            <waga>4715</waga>
+            <photo>http://3dprint.com/wp-content/uploads/2015/04/Pratt-and-Whitney-3D-Laser-Scanning-logo.png</photo>
+          </silnik>
+          <silnik ilosc="2" producent="Pratt and Whitney" model="PW4063">
+            <ciag>315</ciag>
+            <waga>5205</waga>
+            <photo>http://3dprint.com/wp-content/uploads/2015/04/Pratt-and-Whitney-3D-Laser-Scanning-logo.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Boeing_747">Boeing 747</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Iran_Air_747-100B_EP-IAM.jpg/240px-Iran_Air_747-100B_EP-IAM.jpg</photo>
+      </samolot>
+      <samolot producent="Boeing" model="B787-9">
+        <miejsc>290</miejsc>
+        <predkosc_przelotowa>903</predkosc_przelotowa>
+        <zasieg>15750</zasieg>
+        <spalanie>6.35</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="General Electric" model="GEnx">
+            <ciag>321</ciag>
+            <waga>5815</waga>
+            <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/General_Electric_logo.svg/1024px-General_Electric_logo.svg.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Boeing_787">Boeing 787</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/SP-LRA.jpg/240px-SP-LRA.jpg</photo>
+      </samolot>
+      <samolot producent="Airbus" model="A318-100">
+        <miejsc>117</miejsc>
+        <predkosc_przelotowa>780</predkosc_przelotowa>
+        <zasieg>6020</zasieg>
+        <spalanie>2.72</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="CFM International" model="CFM56">
+            <ciag>86.7</ciag>
+            <waga>2366</waga>
+            <photo>http://www.cfmaeroengines.com/img/logo.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Airbus_A318">Airbus A318</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/4/49/Airfrance.a318-100.f-guga.arp.jpg</photo>
+      </samolot>
+      <samolot producent="Airbus" model="A340-200">
+        <miejsc>239</miejsc>
+        <predkosc_przelotowa>896</predkosc_przelotowa>
+        <zasieg>14800</zasieg>
+        <spalanie>7.25</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="CFM International" model="CFM56">
+            <ciag>86.7</ciag>
+            <waga>2366</waga>
+            <photo>http://www.cfmaeroengines.com/img/logo.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Airbus_A340">Airbus A340</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/9/9d/Lufthansa_A346_D-AIHT-1.jpg</photo>
+      </samolot>
+      <samolot producent="Airbus" model="A350-800">
+        <miejsc>270</miejsc>
+        <predkosc_przelotowa>945</predkosc_przelotowa>
+        <zasieg>15400</zasieg>
+        <spalanie>6.8</spalanie>
+        <silniki>
+          <silnik ilosc="2" producent="Rolls-Royce" model="Trent XWB">
+            <ciag>95</ciag>
+            <waga>2542</waga>
+            <photo>https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Rolls-Royce_logo.svg/1280px-Rolls-Royce_logo.svg.png</photo>
+          </silnik>
+        </silniki>
+        <info url="https://pl.wikipedia.org/wiki/Airbus_A350">Airbus A350</info>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/5/5f/A350_First_Flight_-_Low_pass_02.jpg</photo>
+      </samolot>
+    </samoloty>
+  </cywilne>
+  <wojskowe>
+    <typy_pojazdow>
+      <bojowy>Samoloty bojowe</bojowy>
+      <bojowy>Samoloty rozpoznania</bojowy>
+      <pomocniczy>Tankowce</pomocniczy>
+      <pomocniczy>Transportowce</pomocniczy>
+      <bojowy>Smiglowce bojowe</bojowy>
+      <pomocniczy>Samoloty treningowe</pomocniczy>
+    </typy_pojazdow>
+  </wojskowe>
+</lotnictwo>

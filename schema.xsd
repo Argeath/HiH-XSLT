@@ -1,0 +1,222 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="pl">
+      XML Schema - lotnictwo. Dominik Kinal 160589.
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="lotnictwo" type="lotnictwo_typ"/>
+  <xsd:element name="cywilne" type="cywilne_typ"/>
+  <xsd:element name="wojskowe" type="wojskowe_typ"/>
+  <xsd:element name="polska" type="polska_typ"/>
+  <xsd:element name="silnik" type="silnik_typ"/>
+  <xsd:element name="samolot" type="samolot_silnik_typ"/>
+  <xsd:attribute name="producent" type="producent_typ"/>
+
+  <xsd:complexType name="lotnictwo_typ">
+    <xsd:sequence>
+      <xsd:element ref="cywilne"/>
+      <xsd:element ref="wojskowe"/>
+    </xsd:sequence>
+    <xsd:attribute name="autor" type="xsd:string"/>
+    <xsd:attribute name="nr-indexu" type="xsd:int"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="cywilne_typ">
+    <xsd:sequence>
+      <xsd:element name="samoloty">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="samolot" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="wojskowe_typ">
+    <xsd:sequence>
+      <xsd:element name="typy_pojazdow">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="typ" type="xsd:string" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:element name="dowodztwo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="dowodca" type="dowodca_typ"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="bazy">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="baza" type="baza_typ"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:complexType name="polska_typ">
+    <xsd:sequence>
+      <xsd:element ref="dowodztwo"/>
+      <xsd:element ref="bazy"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="baza_typ">
+    <xsd:sequence>
+    </xsd:sequence>
+    <xsd:attribute name="nazwa" type="xsd:string"/>
+    <xsd:attribute name="miasto" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="rekord_typ">
+    <xsd:sequence>
+      <xsd:element name="kraj" type="kraj_typ"/>
+    </xsd:sequence>
+    <xsd:attribute name="dane" type="ranking_dane_typ"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="dowodca_typ">
+    <xsd:sequence>
+      <xsd:element name="nazwisko" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="ranga" type="ranga_typ"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ranking_sil_typ">
+    <xsd:sequence>
+      <xsd:element name="rekord" type="rekord_typ"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="samolot_typ">
+    <xsd:sequence>
+      <xsd:element name="miejsc">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="0"/>
+            <xsd:maxInclusive value="1000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="predkosc_przelotowa">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="100"/>
+            <xsd:maxInclusive value="5000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="zasieg">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="100"/>
+            <xsd:maxExclusive value="30000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="spalanie">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:minExclusive value="0"/>
+            <xsd:maxExclusive value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ref="producent" />
+    <xsd:attribute ref="model" />
+  </xsd:complexType>
+
+  <xsd:complexType name="samolot_silnik_typ">
+    <xsd:complexContent>
+      <xsd:extension base="samolot_typ">
+        <xsd:sequence>
+          <xsd:element name="silniki">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="silnik" minOccurs="0"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="info" type="xsd:anyURI"/>
+          <xsd:element name="photo" type="xsd:anyURI"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="silnik_typ">
+    <xsd:sequence>
+      <xsd:element name="ciag" type="xsd:decimal"/>
+      <xsd:element name="waga" type="xsd:int"/>
+    </xsd:sequence>
+    <xsd:attribute name="ilosc" type="xsd:int"/>
+    <xsd:attribute ref="producent"/>
+    <xsd:attribute ref="model"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="ranking_dane_typ">
+    <xsd:list itemType="xsd:int"/>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="producentSamolotow">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Boeing"/>
+      <xsd:enumeration value="Airbus"/>
+      <xsd:enumeration value="Embraer"/>
+      <xsd:enumeration value="Antonov"/>
+      <xsd:enumeration value="Let Kunovice"/>
+      <xsd:enumeration value="Cessna"/>
+      <xsd:enumeration value="Tupolev"/>
+      <xsd:enumeration value="Bombardier"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="producentSilnikow">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Rolls-Royce"/>
+      <xsd:enumeration value="Pratt and Whitney"/>
+      <xsd:enumeration value="CFM International"/>
+      <xsd:enumeration value="General Electric"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="producent_typ">
+    <xsd:union memberTypes="producentSamolotow producentSilnikow"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="kraj_typ">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]{2}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ranga_typ">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="gen"/>
+      <xsd:enumeration value="plk"/>
+      <xsd:enumeration value="maj"/>
+      <xsd:enumeration value="kap"/>
+      <xsd:enumeration value="por"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:attribute name="model">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:minLength value="2"/>
+        <xsd:maxLength value="50"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:attribute>
+
+</xsd:schema>

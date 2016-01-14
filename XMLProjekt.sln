@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0A5B23C-094B-4549-9152-D0D594A7B676}"
+	ProjectSection(SolutionItems) = preProject
+		main.xml = main.xml
+		schema.xsd = schema.xsd
+		styles1.css = styles1.css
+		transform1.xslt = transform1.xslt
+		transform2.xslt = transform2.xslt
+		transform3.xslt = transform3.xslt
+		transform4.xslt = transform4.xslt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
